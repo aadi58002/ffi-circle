@@ -1,0 +1,6 @@
+lib:
+    rustc rust.rs --crate-type cdylib -o librustffihello.so
+run:
+    rustc rust.rs
+    ./rust
+    rm rust

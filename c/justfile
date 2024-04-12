@@ -1,0 +1,12 @@
+export LD_LIBRARY_PATH := "../rust"
+
+# GCC does not use LD_LIBRARY_PATH instead it use LIBRARY_PATH at compile time
+export LIBRARY_PATH := LD_LIBRARY_PATH
+
+lib:
+    gcc -shared -o libcffihello.so c.c -lrustffihello
+
+run:
+    gcc -o run -lrustffihello c.c
+    ./run
+    rm run
