@@ -4,9 +4,9 @@ export LD_LIBRARY_PATH := "../c"
 export LIBRARY_PATH := LD_LIBRARY_PATH
 
 lib:
-    g++ -shared -o libc++.so c++.cpp -lcffihello -rpath ../rust
+    g++ -shared -lcffihello -o libc++ffihello.so c++.cpp
 
 run:
-    g++ c++.cpp -o run -lcffihello -rpath ../rust
+    g++ -o run -lcffihello c++.cpp
     ./run
     rm run

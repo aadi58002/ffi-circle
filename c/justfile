@@ -4,7 +4,7 @@ export LD_LIBRARY_PATH := "../rust"
 export LIBRARY_PATH := LD_LIBRARY_PATH
 
 lib:
-    gcc -shared -o libcffihello.so c.c -lrustffihello
+    gcc -shared -lrustffihello -Wl,-rpath,$LD_LIBRARY_PATH -o libcffihello.so c.c
 
 run:
     gcc -o run -lrustffihello c.c
