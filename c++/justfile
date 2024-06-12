@@ -7,6 +7,6 @@ lib:
     g++ -shared -lcffihello -o libc++ffihello.so c++.cpp
 
 run:
-    g++ -o run -lcffihello c++.cpp
+    g++ -o run -lcffihello -Wl,--copy-dt-needed-entries c++.cpp
     ./run
     rm run
